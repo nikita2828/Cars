@@ -58,7 +58,6 @@ body {
   margin-left: 5px;
 }
 .divInp {
-    flex: 1;
   background-color: white;
   position: fixed;
   margin-top: 20px;
@@ -104,12 +103,12 @@ body {
 
 /* Вторая часть с автомобилями */
 
-.cars {
-  display: flex; 
-  flex-direction: column; 
-  margin-left: 280px;
+.superCar{
+    display: flex;
+    justify-content: flex-end;
 }
 .car {
+  max-width: 1020px;
   height: 250px;
   display: flex;
   flex-direction: row;
@@ -135,4 +134,27 @@ body {
     flex: 1;
 }
 .imgAndP {
+
+}
+.car_btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.edit, .delete{
+    height: 25px;
+    border: none;
+    outline: none;
+    font-family: "San Francisco";
+    font-weight: 700;
+    margin: 3px;
+    color: white;
+    border-radius: 3px;
+}
+.delete{
+    background-color: red;
+}
+.edit{
+    background-color: royalblue;
 }
