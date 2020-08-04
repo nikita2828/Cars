@@ -8,117 +8,98 @@
   </head>
   <body>
     <div class="container">
-      <span class="spanImg"
-        ><img src="image/AUTO-RIA-logo-2110.png" alt="" width="100px" />
-        <p class="spanP">Скрыть</p></span
-      >
+     
 
       <div class="divInp">
+        <div class="divHeader"><span class="span spanHeader">Fill the form</span></div>
+
         <form id="form" name="server" action="">
           <div class="spanPlusInp">
-            <span class="span">Выбирите кузов авто</span>
-
-            <div class="forInput">
-              <select class="select" name="select" id="select">
-                <option selected disabled>Выберите</option>
-                <option value="Седан">Седан</option>
-                <option value="Универсал">Универсал</option>
-                <option value="Купе">Купе</option>
-                <option value="Хетчбэк">Хетчбэк</option>
-                <option value="Лифтбэк">Лифтбэк</option> </select
-              ><br />
-            </div>
-          </div>
-
-          <div class="spanPlusInp">
-            <span class="span">Введите марку авто</span>
+            <span class="span">Make</span>
 
             <div class="forInput">
               <input
                 name="brand"
                 class="input"
                 type="text"
-                placeholder="Марка"
+                placeholder="make"
               /><br />
             </div>
           </div>
 
           <div class="spanPlusInp">
-            <span class="span">Введите модель авто</span>
+            <span class="span">Model</span>
 
             <div class="forInput">
               <input
                 name="model"
                 class="input"
                 type="text"
-                placeholder="Модель"
+                placeholder="model"
               /><br />
             </div>
           </div>
 
           <div class="spanPlusInp">
-            <span class="span">Введите год авто</span>
+            <span class="span">Year</span>
 
             <div class="forInput">
               <input
                 name="year"
                 class="input"
                 type="number"
-                placeholder="Год"
+                placeholder="year"
               /><br />
             </div>
           </div>
 
           <div class="spanPlusInp">
-            <span class="span">Введите пробег</span>
+            <span class="span">Mileage</span>
 
             <div class="forInput">
               <input
                 name="km"
                 class="input"
                 type="number"
-                placeholder="Пробег"
+                placeholder="mileage"
               /><br />
             </div>
           </div>
 
           <div class="spanPlusInp">
-            <span class="span">Добавить фото</span>
+            <span class="span">Add a photo</span>
 
             <div class="forInput">
-              <input
-                name="photo"
-                class="inputPhoto"
-                type="file"
-                placeholder="Фото"
-              /><br />
+              <input name="photo" class="input" type="url"
+              placeholder="add a photo" /><br />
             </div>
           </div>
 
           <div class="spanPlusInp">
-            <span class="span">Введите описание авто</span><br />
+            <span class="span spanTextarea">Enter a description of the car</span><br />
 
             <textarea
               name="textarea"
               id="textarea"
-              cols="60"
-              rows="10"
+              cols="30"
+              rows="5"
               maxlength="1000"
-              placeholder="Введите описание вашего авто"
+              placeholder="enter a description of the car"
               form="form"
             ></textarea
             ><br />
           </div>
 
-          <div class="spanPlusInp">
-            <span class="span">Создать обьявление</span>
+          <div class="spanPlusInp spanPlusSubmit">
+            <span class="span">Create ad</span>
 
             <div class="forInput">
               <input
                 name="submit"
                 class="inputSubmit"
                 type="submit"
-                placeholder="Year"
+                placeholder="send"
+                value="Send"
               /><br />
             </div>
           </div>
@@ -146,31 +127,7 @@
               хранение, оклеен в индивидуальный дизайн в тюнинг-ателье Southart,
               родной цвет авто - белый. Зимой не эксплуатировалась, все
               расходники заменены, новые тормозные колодки, полное обслуживание,
-              по технической части машина в стоковом заводском состоянии. 
-            </p>
-          </div>
-        </div>
-        <div class="car">
-          <div class="imgAndP">
-            <img
-              class="carImg"
-              src="https://cdn3.riastatic.com/photosnew/auto/photo/bmw_m2__341743843fx.webp"
-              alt=""
-            />
-          </div>
-
-          <div class="car_info">
-            <p class="info_body">Кузов: Седан</p>
-            <p class="info_brand">Марка: BMW</p>
-            <p class="info_model">Модель: M2</p>
-            <p class="info_year">Год: 2016</p>
-            <p class="info_km">Пробег: 43тыс</p>
-            <p class="info_textarea">
-              Описание: <br />Автомобиль в идеальном состоянии, гаражное
-              хранение, оклеен в индивидуальный дизайн в тюнинг-ателье Southart,
-              родной цвет авто - белый. Зимой не эксплуатировалась, все
-              расходники заменены, новые тормозные колодки, полное обслуживание,
-              по технической части машина в стоковом заводском состоянии. 
+              по технической части машина в стоковом заводском состоянии.
             </p>
           </div>
         </div>
