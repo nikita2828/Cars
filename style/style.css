@@ -1,124 +1,138 @@
 /** Ultra Light */
 @font-face {
-    font-family: "San Francisco";
-    font-weight: 100;
-    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff");
-  }
-  
-  /** Thin */
-  @font-face {
-    font-family: "San Francisco";
-    font-weight: 200;
-    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff");
-  }
-  
-  /** Regular */
-  @font-face {
-    font-family: "San Francisco";
-    font-weight: 400;
-    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
-  }
-  
-  /** Medium */
-  @font-face {
-    font-family: "San Francisco";
-    font-weight: 500;
-    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff");
-  }
-  
-  /** Semi Bold */
-  @font-face {
-    font-family: "San Francisco";
-    font-weight: 600;
-    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff");
-  }
-  
-  /** Bold */ 
-  @font-face {
-    font-family: "San Francisco";
-    font-weight: 700;
-    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
-  }
-  body{
-      margin: 0;
-      padding: 0;
-      font-family: "San Francisco";
-      font-weight: 400;
-  }
-
-  .container{
-      width: 100%; 
-  }
-  .divHeader{
-      background-color: royalblue;
-      border-radius: 8px 8px 0 0 ;
-  }
-  .spanHeader{
-      color: white;
-      margin-left: 5px;
-  }
-  .divInp{
-      background-color: white;
-      position: fixed;
-     margin-top: 20px;
-     margin-left: 20px;
-     max-width: 250px;
-    border: 1px solid royalblue;
-    border-radius: 10px;
-  }
-  .span{
-      display: block;
-      font-size: 18px;
-      margin-bottom: 5px;
-  }
-  .spanTextarea{
-      margin-bottom: -15px;
-  }
-  .spanPlusInp {
-      margin-bottom: 15px;
-      margin-left: 5px;
-  }
-
-  .input{
-      width: 225px;
-      height: 25px;
-  }
-  .inputSubmit{
-      background-color: green;
-      color: white;
-      width: 252px;
-      height: 25px;
-      border: none;
-      outline: none;
-      margin: 0;
-      margin-left: -6px;
-      padding: 0;
-      border-radius: 0 0 10px 10px;
-      font-family: "San Francisco";
-      font-weight: 400;
-  }
-  .spanPlusSubmit{
-     margin-bottom: -1px;
-     
-  }
-  
-/* Вторая часть с автомобилями */
-.cars{
-   
-   
+  font-family: "San Francisco";
+  font-weight: 100;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff");
 }
-.car{
-   
+
+/** Thin */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 200;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff");
+}
+
+/** Regular */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+/** Medium */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 500;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff");
+}
+
+/** Semi Bold */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 600;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff");
+}
+
+/** Bold */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 700;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "San Francisco";
+  font-weight: 400;
+}
+
+.container {
+  width: 100%;
+}
+.divHeader {
+  background-color: royalblue;
+  border-radius: 8px 8px 0 0;
+}
+.spanHeader {
+  color: white;
+  margin-left: 5px;
+}
+.divInp {
+    flex: 1;
+  background-color: white;
+  position: fixed;
+  margin-top: 20px;
+  margin-left: 20px;
+  max-width: 250px;
+  border: 1px solid royalblue;
+  border-radius: 10px;
+}
+.span {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.spanTextarea {
+  margin-bottom: -15px;
+}
+.spanPlusInp {
+  margin-bottom: 15px;
+  margin-left: 5px;
+}
+
+.input {
+  width: 225px;
+  height: 25px;
+}
+.inputSubmit {
+  background-color: green;
+  color: white;
+  width: 252px;
+  height: 25px;
+  border: none;
+  outline: none;
+  margin: 0;
+  margin-left: -6px;
+  padding: 0;
+  border-radius: 0 0 10px 10px;
+  font-family: "San Francisco";
+  font-weight: 400;
+}
+.spanPlusSubmit {
+  margin-bottom: -1px;
+}
+
+/* Вторая часть с автомобилями */
+
+.cars {
+  display: flex; 
+  flex-direction: column; 
+  margin-left: 280px;
+}
+.car {
+  height: 250px;
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid royalblue;
 }
 .carImg {
-   height: 250px;
+  height: 250px;
 }
-.car_info{
- 
+.car_info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 10px;
 }
-.car_info p{
-    
+.car_info p {
+  margin-right: 10px;
+  width: 23%;
 }
-.imgAndP{
-    
+.info_textarea{
+    flex: 1;
+}
+.imgAndP {
 }
