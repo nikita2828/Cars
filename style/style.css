@@ -133,9 +133,7 @@ body {
 .info_textarea{
     flex: 1;
 }
-.imgAndP {
 
-}
 .car_btn{
     display: flex;
     flex-direction: row;
@@ -157,4 +155,20 @@ body {
 }
 .edit{
     background-color: royalblue;
+}
+.sort{
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-end;
+ margin: 15px;
+}
+.fromCheep, .fromDear{
+  margin: 5px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  background-color: royalblue;
+  color: white;
+  font-family: "San Francisco";
+  font-weight: 400;
 }
