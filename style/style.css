@@ -109,7 +109,8 @@ body {
 }
 .car {
   max-width: 1020px;
-  height: 250px;
+  /* height: 250px; */
+  max-height: 500px;
   display: flex;
   flex-direction: row;
   margin: 20px;
@@ -121,17 +122,16 @@ body {
   height: 250px;
 }
 .car_info {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 10px;
+  
 }
 .car_info p {
+  display: inline-block;
   margin-right: 10px;
-  width: 23%;
+  margin-left: 10px
+
 }
 .info_textarea{
-    flex: 1;
+  margin-top: ;
 }
 
 .car_btn{
