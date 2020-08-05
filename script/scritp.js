@@ -24,3 +24,27 @@ function mySort() {
     }
   }
 }
+
+// Get запрос
+
+let urlPro = "https://node-server.vercel.app/cars";
+
+let body = {
+    
+};
+
+let headers = { "Content-Type": "application/json" };
+function fetPro(method, url, body = null) {
+  return fetch(url).then((response) => {
+    if (response.status >= 400) {
+      console.error(response.status, "Все плохо");
+      return response.json();
+    } else {
+      console.log(response.status, "Все хорошо");
+      return response.json();
+    }
+  });
+}
+fetPro("GET", urlPro)
+  .then((data) => console.log(data))
+  .catch((err) => console.error(err));
