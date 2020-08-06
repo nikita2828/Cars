@@ -7,95 +7,95 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container"> 
-      
+    <div class="container">
+      <!-- search -->
+
       <div class="searchWrapper">
-      <input type="text" class="search" placeholder="search">
-      <select class="sort">
-        <option hidden class="sortItem" value="sort by price" disabled selected>Sort by price</option>
-        <option class="sortItem" value="lower first">Lower first</option>
-        <option class="sortItem" value="highest first">Highest first</option>
-      </select>
-    </div>
-        <div class="wrapperForForm">
-        <div class="divInp">
-          <div class="divHeader">
-            <span class="span spanHeader">Fill the form</span>
+        <input type="text" class="search" placeholder="search" />
+        <select class="sort">
+          <option
+            hidden
+            class="sortItem"
+            value="sort by price"
+            disabled
+            selected
+            >Sort by price</option
+          >
+          <option class="sortItem" value="lower first">Lower first</option>
+          <option class="sortItem" value="highest first">Highest first</option>
+        </select>
+      </div>
+
+      <!-- form -->
+
+      <div class="wrapperForForm">
+        <div class="formContainer">
+          <div class="formHeader">
+            <span class="title headerItem">Fill the form</span>
           </div>
 
           <form id="form" name="server" action="">
-            <div class="spanPlusInp">
-              <span class="span">Make</span>
-
-              <div class="forInput">
-                <input
-                  name="brand"
-                  class="input"
-                  type="text"
-                  placeholder="make"
-                /><br />
-              </div>
+            <div class="wrapperTitleAndInput">
+              <span class="title">Make</span>
+              <input
+                name="brand"
+                class="input"
+                type="text"
+                placeholder="make"
+              /><br />
             </div>
 
-            <div class="spanPlusInp">
-              <span class="span">Model</span>
+            <div class="wrapperTitleAndInput">
+              <span class="title">Model</span>
 
-              <div class="forInput">
-                <input
-                  name="model"
-                  class="input"
-                  type="text"
-                  placeholder="model"
-                /><br />
-              </div>
+              <input
+                name="model"
+                class="input"
+                type="text"
+                placeholder="model"
+              /><br />
             </div>
 
-            <div class="spanPlusInp">
-              <span class="span">Year</span>
+            <div class="wrapperTitleAndInput">
+              <span class="title">Year</span>
 
-              <div class="forInput">
-                <input
-                  name="year"
-                  class="input"
-                  type="number"
-                  placeholder="year"
-                /><br />
-              </div>
+              <input
+                name="year"
+                class="input"
+                type="number"
+                placeholder="year"
+              /><br />
             </div>
 
-            <div class="spanPlusInp">
-              <span class="span">Mileage</span>
+            <div class="wrapperTitleAndInput">
+              <span class="title">Mileage</span>
 
-              <div class="forInput">
-                <input
-                  name="km"
-                  class="input"
-                  type="number"
-                  placeholder="mileage"
-                /><br />
-              </div>
+              <input
+                name="km"
+                class="input"
+                type="number"
+                placeholder="mileage"
+              /><br />
             </div>
 
-            <div class="spanPlusInp">
-              <span class="span">Add a photo</span>
+            <div class="wrapperTitleAndInput">
+              <span class="title">Add a photo</span>
 
-              <div class="forInput">
-                <input
-                  name="photo"
-                  class="input"
-                  type="url"
-                  placeholder="add a photo"
-                /><br />
-              </div>
+              <input
+                name="photo"
+                class="input"
+                type="url"
+                placeholder="add a photo"
+              /><br />
             </div>
 
-            <div class="spanPlusInp">
-              <span class="span spanTextarea"
+            <div class="wrapperTitleAndInput">
+              <span class="title spanTextarea"
                 >Enter a description of the car</span
               ><br />
 
               <textarea
-              class="description"
+                class="description"
                 name="textarea"
                 id="description"
                 cols="28"
@@ -107,40 +107,37 @@
               ><br />
             </div>
 
-            <div class="spanPlusInp spanPlusSubmit">
-              <div class="forInput">
-                <input
-                  name="submit"
-                  class="inputSubmit"
-                  type="submit"
-                  placeholder="send"
-                  value="Create"
-                /><br />
-              </div>
+            <div class="wrapperTitleAndInput wrapperSubmitBtn">
+              <input
+                name="submit"
+                class="submitBtn"
+                type="submit"
+                placeholder="send"
+                value="Create"
+              /><br />
             </div>
           </form>
         </div>
       </div>
 
-      <div class="superCar">
-       
+      <!-- cars -->
+
+      <div class="wrapperCars">
         <div class="cars">
-          <div class="car" data-year="2016">
-            <div class="imgAndP">
-              <img
-                class="carImg"
-                src="https://cdn3.riastatic.com/photosnew/auto/photo/bmw_m2__341743843fx.webp"
-                alt=""
-              />
-            </div>
+          <div class="car">
+            <img
+              class="carImg"
+              src="https://cdn3.riastatic.com/photosnew/auto/photo/bmw_m2__341743843fx.webp"
+              alt=""
+            />
 
-            <div class="car_info">
-              <p class="info_brand">Brand: BMW</p>
-              <p class="info_model">Model: M2</p>
-              <p class="info_year">Year: 2016</p>
-              <p class="info_km">Mileage: 43тыс</p>
+            <div class="carInfo">
+              <p class="infoBrand">Brand: BMW</p>
+              <p class="infoModel">Model: M2</p>
+              <p class="infoYear">Year: 2016</p>
+              <p class="infoKm">Mileage: 43тыс</p>
               <br />
-              <p class="info_textarea">
+              <p class="infoDescription">
                 Description: <br />Автомобиль в идеальном состоянии, гаражное
                 хранение, оклеен в индивидуальный дизайн в тюнинг-ателье
                 Southart, родной цвет авто - белый. Зимой не эксплуатировалась,
@@ -149,26 +146,24 @@
                 состоянии.
               </p>
             </div>
-            <div class="car_btn">
-              <button class="edit">Edit</button>
-              <button class="delete">Delete</button>
+            <div class="wrapperCarBtn">
+              <button class="editBtn">Edit</button>
+              <button class="deleteBtn">Delete</button>
             </div>
           </div>
-          <div class="car" data-year="2020">
-            <div class="imgAndP">
-              <img
-                class="carImg"
-                src="https://cdn1.riastatic.com/photosnew/auto/photo/toyota_rav4__341852886f.webp"
-                alt=""
-              />
-            </div>
+          <div class="car">
+            <img
+              class="carImg"
+              src="https://cdn1.riastatic.com/photosnew/auto/photo/toyota_rav4__341852886f.webp"
+              alt=""
+            />
 
-            <div class="car_info">
-              <p class="info_brand">Brand: Toyota</p>
-              <p class="info_model">Model: Rav4</p>
-              <p class="info_year">Year: 2020</p>
-              <p class="info_km">Mileage: 2тыс</p>
-              <p class="info_textarea">
+            <div class="carInfo">
+              <p class="infoBrand">Brand: Toyota</p>
+              <p class="infoModel">Model: Rav4</p>
+              <p class="infoYear">Year: 2020</p>
+              <p class="infoKm">Mileage: 2тыс</p>
+              <p class="infoDescription">
                 Description: <br />Автомобиль в идеальном состоянии, гаражное
                 хранение, оклеен в индивидуальный дизайн в тюнинг-ателье
                 Southart, родной цвет авто - белый. Зимой не эксплуатировалась,
@@ -177,26 +172,24 @@
                 состоянии.
               </p>
             </div>
-            <div class="car_btn">
-              <button class="edit">Edit</button>
-              <button class="delete">Delete</button>
+            <div class="wrapperCarBtn">
+              <button class="editBtn">Edit</button>
+              <button class="deleteBtn">Delete</button>
             </div>
           </div>
-          <div class="car" data-year="2013">
-            <div class="imgAndP">
-              <img
-                class="carImg"
-                src="https://cdn3.riastatic.com/photosnew/auto/photo/porsche_cayenne__332661433f.webp"
-                alt=""
-              />
-            </div>
+          <div class="car">
+            <img
+              class="carImg"
+              src="https://cdn3.riastatic.com/photosnew/auto/photo/porsche_cayenne__332661433f.webp"
+              alt=""
+            />
 
-            <div class="car_info">
-              <p class="info_brand">Brand: Porsche</p>
-              <p class="info_model">Model: Cayenne</p>
-              <p class="info_year">Year: 2013</p>
-              <p class="info_km">Mileage: 69тыс</p>
-              <p class="info_textarea">
+            <div class="carInfo">
+              <p class="infoBrand">Brand: Porsche</p>
+              <p class="infoModel">Model: Cayenne</p>
+              <p class="infoYear">Year: 2013</p>
+              <p class="infoKm">Mileage: 69тыс</p>
+              <p class="infoDescription">
                 Description: <br />Автомобиль в идеальном состоянии, гаражное
                 хранение, оклеен в индивидуальный дизайн в тюнинг-ателье
                 Southart, родной цвет авто - белый. Зимой не эксплуатировалась,
@@ -205,26 +198,24 @@
                 состоянии.
               </p>
             </div>
-            <div class="car_btn">
-              <button class="edit">Edit</button>
-              <button class="delete">Delete</button>
+            <div class="wrapperCarBtn">
+              <button class="editBtn">Edit</button>
+              <button class="deleteBtn">Delete</button>
             </div>
           </div>
-          <div class="car" data-year="2015">
-            <div class="imgAndP">
-              <img
-                class="carImg"
-                src="https://cdn4.riastatic.com/photosnew/auto/photo/audi_a6__343615504f.webp"
-                alt=""
-              />
-            </div>
+          <div class="car">
+            <img
+              class="carImg"
+              src="https://cdn4.riastatic.com/photosnew/auto/photo/audi_a6__343615504f.webp"
+              alt=""
+            />
 
-            <div class="car_info">
-              <p class="info_brand">Brand: Audi</p>
-              <p class="info_model">Model: A6</p>
-              <p class="info_year">Year: 2015</p>
-              <p class="info_km">Mileage: 109тыс</p>
-              <p class="info_textarea">
+            <div class="carInfo">
+              <p class="infoBrand">Brand: Audi</p>
+              <p class="infoModel">Model: A6</p>
+              <p class="infoYear">Year: 2015</p>
+              <p class="infoKm">Mileage: 109тыс</p>
+              <p class="infoDescription">
                 Description: <br />Автомобиль в идеальном состоянии, гаражное
                 хранение, оклеен в индивидуальный дизайн в тюнинг-ателье
                 Southart, родной цвет авто - белый. Зимой не эксплуатировалась,
@@ -233,9 +224,9 @@
                 состоянии.
               </p>
             </div>
-            <div class="car_btn">
-              <button class="edit">Edit</button>
-              <button class="delete">Delete</button>
+            <div class="wrapperCarBtn">
+              <button class="editBtn">Edit</button>
+              <button class="deleteBtn">Delete</button>
             </div>
           </div>
         </div>
