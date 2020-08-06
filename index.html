@@ -7,108 +7,124 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
-      <div class="divInp">
-        <div class="divHeader"><span class="span spanHeader">Fill the form</span></div>
+    <div class="container"> 
+      
+      <div class="searchWrapper">
+      <input type="text" class="search" placeholder="search">
+      <select class="sort">
+        <option hidden class="sortItem" value="sort by price" disabled selected>Sort by price</option>
+        <option class="sortItem" value="lower first">Lower first</option>
+        <option class="sortItem" value="highest first">Highest first</option>
+      </select>
+    </div>
+        <div class="wrapperForForm">
+        <div class="divInp">
+          <div class="divHeader">
+            <span class="span spanHeader">Fill the form</span>
+          </div>
 
-        <form id="form" name="server" action="">
-          <div class="spanPlusInp">
-            <span class="span">Make</span>
+          <form id="form" name="server" action="">
+            <div class="spanPlusInp">
+              <span class="span">Make</span>
 
-            <div class="forInput">
-              <input
-                name="brand"
-                class="input"
-                type="text"
-                placeholder="make"
-              /><br />
+              <div class="forInput">
+                <input
+                  name="brand"
+                  class="input"
+                  type="text"
+                  placeholder="make"
+                /><br />
+              </div>
             </div>
-          </div>
 
-          <div class="spanPlusInp">
-            <span class="span">Model</span>
+            <div class="spanPlusInp">
+              <span class="span">Model</span>
 
-            <div class="forInput">
-              <input
-                name="model"
-                class="input"
-                type="text"
-                placeholder="model"
-              /><br />
+              <div class="forInput">
+                <input
+                  name="model"
+                  class="input"
+                  type="text"
+                  placeholder="model"
+                /><br />
+              </div>
             </div>
-          </div>
 
-          <div class="spanPlusInp">
-            <span class="span">Year</span>
+            <div class="spanPlusInp">
+              <span class="span">Year</span>
 
-            <div class="forInput">
-              <input
-                name="year"
-                class="input"
-                type="number"
-                placeholder="year"
-              /><br />
+              <div class="forInput">
+                <input
+                  name="year"
+                  class="input"
+                  type="number"
+                  placeholder="year"
+                /><br />
+              </div>
             </div>
-          </div>
 
-          <div class="spanPlusInp">
-            <span class="span">Mileage</span>
+            <div class="spanPlusInp">
+              <span class="span">Mileage</span>
 
-            <div class="forInput">
-              <input
-                name="km"
-                class="input"
-                type="number"
-                placeholder="mileage"
-              /><br />
+              <div class="forInput">
+                <input
+                  name="km"
+                  class="input"
+                  type="number"
+                  placeholder="mileage"
+                /><br />
+              </div>
             </div>
-          </div>
 
-          <div class="spanPlusInp">
-            <span class="span">Add a photo</span>
+            <div class="spanPlusInp">
+              <span class="span">Add a photo</span>
 
-            <div class="forInput">
-              <input name="photo" class="input" type="url"
-              placeholder="add a photo" /><br />
+              <div class="forInput">
+                <input
+                  name="photo"
+                  class="input"
+                  type="url"
+                  placeholder="add a photo"
+                /><br />
+              </div>
             </div>
-          </div>
 
-          <div class="spanPlusInp">
-            <span class="span spanTextarea">Enter a description of the car</span><br />
+            <div class="spanPlusInp">
+              <span class="span spanTextarea"
+                >Enter a description of the car</span
+              ><br />
 
-            <textarea
-              name="textarea"
-              id="textarea"
-              cols="30"
-              rows="5"
-              maxlength="1000"
-              placeholder="enter a description of the car"
-              form="form"
-            ></textarea
-            ><br />
-          </div>
-
-          <div class="spanPlusInp spanPlusSubmit">
-            <span class="span">Create ad</span>
-
-            <div class="forInput">
-              <input
-                name="submit"
-                class="inputSubmit"
-                type="submit"
-                placeholder="send"
-                value="Send"
-              /><br />
+              <textarea
+              class="description"
+                name="textarea"
+                id="description"
+                cols="28"
+                rows="5"
+                maxlength="1000"
+                placeholder="enter a description of the car"
+                form="form"
+              ></textarea
+              ><br />
             </div>
-          </div>
-        </form>
+
+            <div class="spanPlusInp spanPlusSubmit">
+              <div class="forInput">
+                <input
+                  name="submit"
+                  class="inputSubmit"
+                  type="submit"
+                  placeholder="send"
+                  value="Create"
+                /><br />
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
+
       <div class="superCar">
+       
         <div class="cars">
-          <div class="sort">
-            <button id="fromCheep" class="fromCheep">From cheep</button>
-            <button id="fromDear" class="fromDear">From dear</button>
-          </div>
           <div class="car" data-year="2016">
             <div class="imgAndP">
               <img
@@ -122,7 +138,8 @@
               <p class="info_brand">Brand: BMW</p>
               <p class="info_model">Model: M2</p>
               <p class="info_year">Year: 2016</p>
-              <p class="info_km">Mileage: 43тыс</p><br>
+              <p class="info_km">Mileage: 43тыс</p>
+              <br />
               <p class="info_textarea">
                 Description: <br />Автомобиль в идеальном состоянии, гаражное
                 хранение, оклеен в индивидуальный дизайн в тюнинг-ателье
