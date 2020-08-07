@@ -35,7 +35,7 @@
             <span class="title headerItem">Fill the form</span>
           </div>
 
-          <form id="form" name="server" action="">
+          <form id="form" name="server" action="https://node-server.vercel.app/cars" method="POST">
             <div class="wrapperTitleAndInput">
               <span class="title">Make</span>
               <input
@@ -72,7 +72,7 @@
               <span class="title">Mileage</span>
 
               <input
-                name="km"
+                name="mileage"
                 class="input"
                 type="number"
                 placeholder="mileage"
@@ -83,7 +83,7 @@
               <span class="title">Add a photo</span>
 
               <input
-                name="photo"
+                name="photo_link"
                 class="input"
                 type="url"
                 placeholder="add a photo"
@@ -97,7 +97,7 @@
 
               <textarea
                 class="description"
-                name="textarea"
+                name="description"
                 id="description"
                 cols="28"
                 rows="5"

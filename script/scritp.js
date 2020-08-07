@@ -17,15 +17,14 @@ const carTegs = `
   <button class="deleteBtn">Delete</button>
 </div>
 `;
-const BASE_URL = "https://node-server.vercel.app/cars"
-const carsList = document.querySelector(".cars")
+const BASE_URL = "https://node-server.vercel.app/cars";
+const carsList = document.querySelector(".cars");
 
-
-
-fetch(BASE_URL)
-.then((response) => response.json())
-.then((cars) => {
-    cars.forEach(car => {
+function getRequest() {
+  fetch(BASE_URL)
+    .then((response) => response.json())
+    .then((cars) => {
+      cars.forEach((car) => {
         const carr = document.createElement("div");
         carr.classList.add("car");
         carr.innerHTML = carTegs;
@@ -45,7 +44,18 @@ fetch(BASE_URL)
         infoDescription.innerHTML = `Description:<br> ${car.description}`;
 
         carsList.appendChild(carr);
+      });
     });
-})
+}
+getRequest();
 
+// post request
+// const form = document.querySelector("#form")
+// form.addEventListener("submit", async (e) => {
+//     e.preventDefault();
 
+//     let response = await fetch(BASE_URL, {
+//       method: 'POST',
+//       body: new FormData(form)
+//     })
+// })
