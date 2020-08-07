@@ -1,5 +1,6 @@
-const carTegs = `
+//get request
 
+const carTegs = `
 <img class="carImg" src="" alt="">
 <div class="carInfo">
   <p class="infoBrand">Brand: </p>
@@ -16,10 +17,11 @@ const carTegs = `
   <button class="deleteBtn">Delete</button>
 </div>
 `;
-
-// const cars = document.querySelector(".cars")
 const BASE_URL = "https://node-server.vercel.app/cars"
 const carsList = document.querySelector(".cars")
+
+
+
 fetch(BASE_URL)
 .then((response) => response.json())
 .then((cars) => {
@@ -42,7 +44,6 @@ fetch(BASE_URL)
         infoKm.innerHTML = `Mileage : ${car.mileage}`;
         infoDescription.innerHTML = `Description:<br> ${car.description}`;
 
-        console.log(carr)
         carsList.appendChild(carr);
     });
 })
