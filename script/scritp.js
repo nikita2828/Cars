@@ -50,12 +50,83 @@ function getRequest() {
 getRequest();
 
 // post request
-// const form = document.querySelector("#form")
-// form.addEventListener("submit", async (e) => {
-//     e.preventDefault();
 
-//     let response = await fetch(BASE_URL, {
-//       method: 'POST',
-//       body: new FormData(form)
+// document.addEventListener('DOMContentLoaded', () => {
+
+//     const ajaxSend = (formData) => {
+//         fetch(BASE_URL, { // файл-обработчик
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json', // отправляемые данные
+//             },
+//             body: JSON.stringify(formData)
+//         })
+//             .then(response => alert('Сообщение отправлено'))
+//             .catch(error => console.error(error))
+//     };
+
+//     const forms = document.querySelector('#form');
+//     for (let i = 0; i < forms.length; i++) {
+//         forms[i].addEventListener('submit', function (e) {
+//             e.preventDefault();
+
+//             let formData = new FormData(this);
+//             formData = Object.fromEntries(formData);
+
+//             ajaxSend(formData);
+//             this.reset();
+//         });
+//     };
+// });
+
+// let form = document.querySelector("#form");
+// form.addEventListener("submit", (event) => {
+//   let brand = document.querySelector('[name="brand"]').value;
+//   let model = document.querySelector('[name="model"]').value;
+//   let year = document.querySelector('[name:"year"]').value;
+//   let mileage = document.querySelector('[name:"mileage"]').value;
+//   let photo_link = document.querySelector('[name:"photo_link"]').value;
+//   let description = document.querySelector("[name:description]").value;
+
+//   let searchParams = new URLSearchParams();
+//   searchParams.set("brand", brand);
+//   searchParams.set("model", model);
+//   searchParams.set("year", year);
+//   searchParams.set("mileage", mileage);
+//   searchParams.set("photo_link", photo_link);
+//   searchParams.set("description", description);
+
+//   fetch(BASE_URL, {
+//     method: "POST",
+//     body: JSON.stringify(searchParams)
+//   })
+//     .then(function (response) {
+//       return response.json();
 //     })
-// })
+//     .then((data) => console.log(data));
+//   event.preventDefault();
+// });
+
+let form = document.querySelector("#form");
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const fromData = new FormData(form);
+    const search = new URLSearchParams();
+
+    for(const pair of fromData){
+        search.append(pair[0], pair[1])
+    }
+
+    fetch(BASE_URL, {
+        method: 'POST',
+        body: search
+    }).then(response => {
+        return response.text()
+    }).then(data => console.log(data))
+    .catch(err => console.error(err))
+    form.reset();
+    
+})
+
+
