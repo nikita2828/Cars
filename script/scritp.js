@@ -1,6 +1,9 @@
 let form = document.querySelector("#form");
+
 const BASE_URL = "https://node-server.vercel.app/cars";
+
 const carsList = document.querySelector(".cars");
+
 const carTegs = `
 <img class="carImg" src="" alt="">
 <div class="carInfo">
