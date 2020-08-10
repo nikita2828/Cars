@@ -1,8 +1,13 @@
-let form = document.querySelector("#form");
-
-const BASE_URL = "https://node-server.vercel.app/cars";
-
+const BASE_URL = "http://localhost:3050/cars";
+const form = document.querySelector("#form");
 const carsList = document.querySelector(".cars");
+
+const brandValue = document.querySelector("#brand");
+const modelValue = document.querySelector("#model");
+const yearValue = document.querySelector("#year");
+const mileageValue = document.querySelector("#mileage");
+const photoValue = document.querySelector("#photo_link");
+const descriptionValue = document.querySelector("#description");
 
 const carTegs = `
 <img class="carImg" src="" alt="">
@@ -13,7 +18,7 @@ const carTegs = `
   <p class="infoKm">Mileage: </p>
   <br />
   <p class="infoDescription">
-    Description: <br />
+    Description:<br>
   </p>
 </div>
 <div class="wrapperCarBtn">
@@ -21,7 +26,6 @@ const carTegs = `
   <button class="deleteBtn">Delete</button>
 </div>
 `;
-
 
 //get request
 
@@ -31,6 +35,7 @@ function getRequest() {
     .then((cars) => {
       cars.forEach((car) => {
         const carr = document.createElement("div");
+
         carr.classList.add("car");
         carr.innerHTML = carTegs;
 
@@ -42,11 +47,11 @@ function getRequest() {
         const infoDescription = carr.querySelector(".infoDescription");
 
         carImg.setAttribute("src", car.photo_link);
-        infoBrand.innerHTML = `Brand: ${car.brand}`;
-        infoModel.innerHTML = `Model: ${car.model}`;
-        infoYear.innerHTML = `Year: ${car.year}`;
-        infoKm.innerHTML = `Mileage : ${car.mileage}`;
-        infoDescription.innerHTML = `Description:<br> ${car.description}`;
+        infoBrand.innerText = `Brand: ${car.brand}`;
+        infoModel.innerText = `Model: ${car.model}`;
+        infoYear.innerText = `Year: ${car.year}`;
+        infoKm.innerText = `Mileage : ${car.mileage}`;
+        infoDescription.innerText = `Description: ${car.description}`;
 
         carsList.appendChild(carr);
       });
@@ -54,28 +59,62 @@ function getRequest() {
 }
 getRequest();
 
+//get request one obj
+
+function getRequestOne() {
+  fetch(BASE_URL)
+    .then((response) => response.json())
+    .then((data) => data.pop())
+    .then((cars) => [cars])
+    .then((res) => {
+      res.forEach((car) => {
+        const carrOne = document.createElement("div");
+
+        carrOne.classList.add("car");
+        carrOne.innerHTML = carTegs;
+
+        const carImgOne = carrOne.querySelector(".carImg");
+        const infoBrandOne = carrOne.querySelector(".infoBrand");
+        const infoModelOne = carrOne.querySelector(".infoModel");
+        const infoYearOne = carrOne.querySelector(".infoYear");
+        const infoKmOne = carrOne.querySelector(".infoKm");
+        const infoDescriptionOne = carrOne.querySelector(".infoDescription");
+
+        carImgOne.setAttribute("src", car.photo_link);
+        infoBrandOne.innerText = `Brand: ${car.brand}`;
+        infoModelOne.innerText = `Model: ${car.model}`;
+        infoYearOne.innerText = `Year: ${car.year}`;
+        infoKmOne.innerText = `Mileage : ${car.mileage}`;
+        infoDescriptionOne.innerText = `Description: ${car.description}`;
+
+        carsList.appendChild(carrOne);
+      });
+    });
+}
+
 
 // post request
 
-
 form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const fromData = new FormData(form);
-    const search = new URLSearchParams();
+  const carObj = {
+    brand: brandValue.value,
+    model: modelValue.value,
+    year: +yearValue.value,
+    mileage: +mileageValue.value,
+    photo_link: photoValue.value,
+    description: descriptionValue.value,
+  };
 
-    for(const pair of fromData){
-        search.append(pair[0], pair[1])
-    }
-
-    fetch(BASE_URL, {
-        method: 'POST',
-        body: search
-    }).then(response => {
-        return response.text()
-    }).then(data => console.log(data))
-    .catch(err => console.error(err))
-    form.reset();
-})
-
-
+  fetch(BASE_URL, {
+    method: "POST",
+    body: JSON.stringify(carObj),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then(() => getRequestOne())
+    .catch((err) => console.error(err));
+  form.reset();
+});
