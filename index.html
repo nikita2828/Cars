@@ -8,28 +8,11 @@
   </head>
   <body>
     <div class="container">
-      <!-- search -->
-      <div class="superWrapper">
-      <div class="searchWrapper">
-        <input type="text" class="search" placeholder="search" />
-        <select class="sort">
-          <option
-            hidden
-            class="sortItem"
-            value="sort by price"
-            disabled
-            selected
-            >Sort by price</option
-          >
-          <option class="sortItem" value="lower first">Lower first</option>
-          <option class="sortItem" value="highest first">Highest first</option>
-        </select>
-      </div>
-    </div>
-
+     
+    
       <!-- form -->
 
-      <div class="wrapperForForm">
+      <div id="wrapperForForm">
         <div class="formContainer">
           <div class="formHeader">
             <span class="title headerItem">Fill the form</span>
@@ -130,10 +113,27 @@
       <!-- cars -->
 
       <div class="wrapperCars">
-        <div class="cars">
-        
-        </div>
+          <!-- search -->
+      <div class="globalSearchWrapper">
+      <div class="searchWrapper">
+        <input type="text" class="search" placeholder="search" />
+        <select class="sort">
+          <option
+            hidden
+            class="sortItem"
+            value="sort by price"
+            disabled
+            selected
+            >Sort by price</option
+          >
+          <option class="sortItem" value="lower first">Lower first</option>
+          <option class="sortItem" value="highest first">Highest first</option>
+        </select>
       </div>
+    </div>
+        <div class="cars"> </div>
+      </div>
+
     </div>
 
     <script src="script/scritp.js"></script>

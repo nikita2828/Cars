@@ -51,71 +51,16 @@ body {
 
 .container {
   width: 100%;
-}
-
-/* search and sort by price */
-.superWrapper{
-  width: 100%;
-  height: 50px;
-}
-.searchWrapper {
-  position: fixed;
   display: flex;
-  margin-top: 10px;
-  margin-right: 20px;
-}
-.search {
-  margin-left: 307px;
-  margin-right: 10px;
-  height: 45px;
-  width: 902px;
-  border-radius: 50px;
-  border: 1px solid #4169e1;
-  outline: none;
-  padding-left: 20px;
-  font-family: "San Francisco";
-  font-weight: 400;
-  font-size: 20px;
-}
-.search:focus {
-  box-shadow: 0px 1px 3px 0px #5c5c5c;
-}
-.search:hover {
-  box-shadow: 0px 1px 3px 0px #5c5c5c;
-  transition: box-shadow .3s;
 }
 
-.sort {
 
-  cursor: pointer;
-  background-color: #4169e1;
-  color: #ffffff;
-  border: none;
-  outline: none;
-  font-family: "San Francisco";
-  font-weight: 400;
-  font-size: 16px;
-  border-radius: 5px 5px 0 0;
-}
-
-.sort:hover {
-  background-color: #4169e1e1;
-  transition: background-color 0.3s;
-}
-.sort:active {
-  background-color: #1b48ce;
-  transition: background-color 0.3s;
-  transition: box-shadow 0.3s;
-  box-shadow: inset 0 0 3px 1px #000000;
-}
-
-.sortItem {
-  background-color: #1b48ce;
-}
 
 /* form */
 
-.wrapperForForm {
+#wrapperForForm {
+width: 20%;
+min-width: 270px;
 }
 .formHeader {
   background-color: #4169e1;
@@ -208,11 +153,74 @@ body {
   margin-bottom: -1px;
 }
 
+
+/* search and sort by price */
+
+.globalSearchWrapper{
+  width: 100%;
+  background-color: white;
+  padding-bottom: 50px;
+}
+.searchWrapper {
+  position: fixed;
+  display: flex;
+  margin-top: 10px;
+  margin-right: 20px;
+  
+}
+.search {
+  margin-left: 20px;
+  margin-right: 10px;
+  height: 45px;
+  width: 902px;
+  border-radius: 50px;
+  border: 1px solid #4169e1;
+  outline: none;
+  padding-left: 20px;
+  font-family: "San Francisco";
+  font-weight: 400;
+  font-size: 20px;
+}
+.search:focus {
+  box-shadow: 0px 1px 3px 0px #5c5c5c;
+}
+.search:hover {
+  box-shadow: 0px 1px 3px 0px #5c5c5c;
+  transition: box-shadow .3s;
+}
+
+.sort {
+
+  cursor: pointer;
+  background-color: #4169e1;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  font-family: "San Francisco";
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 5px 5px 0 0;
+}
+
+.sort:hover {
+  background-color: #4169e1e1;
+  transition: background-color 0.3s;
+}
+.sort:active {
+  background-color: #1b48ce;
+  transition: background-color 0.3s;
+  transition: box-shadow 0.3s;
+  box-shadow: inset 0 0 3px 1px #000000;
+}
+
+.sortItem {
+  background-color: #1b48ce;
+}
+
 /* cars */
 
 .wrapperCars {
-  display: flex;
-  justify-content: flex-end;
+  width: 80%;
 }
 .car {
   width: 1020px;
@@ -225,7 +233,8 @@ body {
   border: 1px solid #4169e1;
 }
 .carImg {
-  width: 350px;
+  /* width: 500px; */
+  height: 250px;
 }
 .carInfo{
   width: 550px;

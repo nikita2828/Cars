@@ -27,6 +27,18 @@ const carTegs = `
 </div>
 `;
 
+
+// delete btn 
+const deleteOneCar = (id) => {
+  fetch(`${BASE_URL}/${id}`, {
+    method: "DELETE"
+  }).then(() => {
+    carsList.innerHTML = ""
+    getRequest()
+  })
+}
+
+
 //get request
 
 function getRequest() {
@@ -46,14 +58,17 @@ function getRequest() {
         const infoKm = carr.querySelector(".infoKm");
         const infoDescription = carr.querySelector(".infoDescription");
 
+        const deleteBtn= carr.querySelector(".deleteBtn")
+
         carImg.setAttribute("src", car.photo_link);
         infoBrand.innerText = `Brand: ${car.brand}`;
         infoModel.innerText = `Model: ${car.model}`;
         infoYear.innerText = `Year: ${car.year}`;
-        infoKm.innerText = `Mileage : ${car.mileage}`;
+        infoKm.innerText = `Mileage : ${car.mileage}m`;
         infoDescription.innerText = `Description: ${car.description}`;
 
         carsList.appendChild(carr);
+        deleteBtn.addEventListener("click", () => deleteOneCar(car._id))
       });
     });
 }
