@@ -8,6 +8,7 @@ const yearValue = document.querySelector("#year");
 const mileageValue = document.querySelector("#mileage");
 const photoValue = document.querySelector("#photo_link");
 const descriptionValue = document.querySelector("#description");
+const validation = document.getElementsByClassName(".validation");
 
 const carTegs = `
 <img class="carImg" src="" alt="">
@@ -27,17 +28,15 @@ const carTegs = `
 </div>
 `;
 
-
-// delete btn 
+// delete btn
 const deleteOneCar = (id) => {
   fetch(`${BASE_URL}/${id}`, {
-    method: "DELETE"
+    method: "DELETE",
   }).then(() => {
-    carsList.innerHTML = ""
-    getRequest()
-  })
-}
-
+    carsList.innerHTML = "";
+    getRequest();
+  });
+};
 
 //get request
 
@@ -58,7 +57,7 @@ function getRequest() {
         const infoKm = carr.querySelector(".infoKm");
         const infoDescription = carr.querySelector(".infoDescription");
 
-        const deleteBtn= carr.querySelector(".deleteBtn")
+        const deleteBtn = carr.querySelector(".deleteBtn");
 
         carImg.setAttribute("src", car.photo_link);
         infoBrand.innerText = `Brand: ${car.brand}`;
@@ -68,7 +67,7 @@ function getRequest() {
         infoDescription.innerText = `Description: ${car.description}`;
 
         carsList.appendChild(carr);
-        deleteBtn.addEventListener("click", () => deleteOneCar(car._id))
+        deleteBtn.addEventListener("click", () => deleteOneCar(car._id));
       });
     });
 }
@@ -107,12 +106,8 @@ function getRequestOne() {
     });
 }
 
-
 // post request
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
+function postRequest() {
   const carObj = {
     brand: brandValue.value,
     model: modelValue.value,
@@ -132,4 +127,128 @@ form.addEventListener("submit", (e) => {
     .then(() => getRequestOne())
     .catch((err) => console.error(err));
   form.reset();
+}
+
+//validation
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if (brandValue.value == "" || brandValue.value == " ") {
+    brandValue.style.border = "1px solid #ff0000";
+    brandValue.classList.add("placeholder");
+  } else {
+    brandValue.style.border = "1px solid #008000";
+  }
+  if (modelValue.value == "" || modelValue.value == " ") {
+    modelValue.style.border = "1px solid #ff0000";
+    modelValue.classList.add("placeholder");
+  } else {
+    modelValue.style.border = "1px solid #008000";
+  }
+  if (yearValue.value == "" || yearValue.value == " ") {
+    yearValue.style.border = "1px solid #ff0000";
+    yearValue.classList.add("placeholder");
+  } else {
+    yearValue.style.border = "1px solid #008000";
+  }
+  if (mileageValue.value == "" || mileageValue.value == " ") {
+    mileageValue.style.border = "1px solid #ff0000";
+    mileageValue.classList.add("placeholder");
+  } else {
+    mileageValue.style.border = "1px solid #008000";
+  }
+  if (photoValue.value == "" || photoValue.value == " ") {
+    photoValue.style.border = "1px solid #ff0000";
+    photoValue.classList.add("placeholder");
+  } else {
+    photoValue.style.border = "1px solid #008000";
+  }
+  if (descriptionValue.value == "" || descriptionValue.value == " ") {
+    descriptionValue.style.border = "1px solid #ff0000";
+    descriptionValue.classList.add("placeholder");
+  } else {
+    descriptionValue.style.border = "1px solid #008000";
+  }
+  if (brandValue.value.length > 0){
+    if (modelValue.value.length > 0){
+      if (yearValue.value.length > 0){
+        if (mileageValue.value.length > 0){
+          if (photoValue.value.length > 0){
+            if (descriptionValue.value.length > 0){
+              postRequest()
+              brandValue.style.border = "1px solid #4169e1"
+              modelValue.style.border = "1px solid #4169e1"
+              yearValue.style.border = "1px solid #4169e1"
+              mileageValue.style.border = "1px solid #4169e1"
+              photoValue.style.border = "1px solid #4169e1"
+              descriptionValue.style.border = "1px solid #4169e1"
+              brandValue.classList.remove("placeholder");
+              modelValue.classList.remove("placeholder");
+              yearValue.classList.remove("placeholder");
+              mileageValue.classList.remove("placeholder");
+              photoValue.classList.remove("placeholder");
+              descriptionValue.classList.remove("placeholder");
+
+            }
+          }
+        }
+      }
+    }
+  }
+});
+
+brandValue.addEventListener("blur", () => {
+  if (brandValue.value == "" || brandValue.value == " ") {
+    brandValue.style.border = "1px solid #ff0000";
+    brandValue.classList.add("placeholder");
+  } 
+  else {
+    brandValue.style.border = "1px solid #008000";
+  }
+});
+
+modelValue.addEventListener("blur", () => {
+  if (modelValue.value == "" || modelValue.value == " ") {
+    modelValue.style.border = "1px solid #ff0000";
+    modelValue.classList.add("placeholder");
+  } else {
+    modelValue.style.border = "1px solid #008000";
+  }
+});
+
+yearValue.addEventListener("blur", () => {
+  if (yearValue.value == "" || yearValue.value == " ") {
+    yearValue.style.border = "1px solid #ff0000";
+    yearValue.classList.add("placeholder");
+  } else {
+    yearValue.style.border = "1px solid #008000";
+  }
+});
+
+mileageValue.addEventListener("blur", () => {
+  if (mileageValue.value == "" || mileageValue.value == " ") {
+    mileageValue.style.border = "1px solid #ff0000";
+    mileageValue.classList.add("placeholder");
+  } else {
+    mileageValue.style.border = "1px solid #008000";
+  }
+});
+
+photoValue.addEventListener("blur", () => {
+  if (photoValue.value == "" || photoValue.value == " ") {
+    photoValue.style.border = "1px solid #ff0000";
+    photoValue.classList.add("placeholder");
+  } else {
+    photoValue.style.border = "1px solid #008000";
+  }
+});
+
+descriptionValue.addEventListener("blur", () => {
+  if (descriptionValue.value == "" || descriptionValue.value == " ") {
+    descriptionValue.style.border = "1px solid #ff0000";
+    descriptionValue.classList.add("placeholder");
+  } else {
+    descriptionValue.style.border = "1px solid #008000";
+  }
 });
