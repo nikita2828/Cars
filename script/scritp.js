@@ -9,6 +9,17 @@ const mileageValue = document.querySelector("#mileage");
 const photoValue = document.querySelector("#photo_link");
 const descriptionValue = document.querySelector("#description");
 const validation = document.getElementsByClassName(".validation");
+const trueImg1 = document.querySelector(".true1");
+const falseImg1 = document.querySelector(".false1");
+const trueImg2 = document.querySelector(".true2");
+const falseImg2 = document.querySelector(".false2");
+const trueImg3 = document.querySelector(".true3");
+const falseImg3 = document.querySelector(".false3");
+const trueImg4 = document.querySelector(".true4");
+const falseImg4 = document.querySelector(".false4");
+const trueImg5 = document.querySelector(".true5");
+const falseImg5 = document.querySelector(".false5");
+
 
 const carTegs = `
 <img class="carImg" src="" alt="">
@@ -137,32 +148,52 @@ form.addEventListener("submit", (e) => {
   if (brandValue.value == "" || brandValue.value == " ") {
     brandValue.style.border = "1px solid #ff0000";
     brandValue.classList.add("placeholder");
-  } else {
+    falseImg1.style.display = "inline"
+  } 
+  else {
     brandValue.style.border = "1px solid #008000";
+    falseImg1.style.display = "none"
+    trueImg1.style.display = "inline";
   }
   if (modelValue.value == "" || modelValue.value == " ") {
     modelValue.style.border = "1px solid #ff0000";
     modelValue.classList.add("placeholder");
+    falseImg2.style.display = "inline"
+
   } else {
     modelValue.style.border = "1px solid #008000";
+    falseImg2.style.display = "none"
+    trueImg2.style.display = "inline";
   }
   if (yearValue.value == "" || yearValue.value == " ") {
     yearValue.style.border = "1px solid #ff0000";
     yearValue.classList.add("placeholder");
+    falseImg3.style.display = "inline"
+
   } else {
     yearValue.style.border = "1px solid #008000";
+    falseImg3.style.display = "none"
+    trueImg3.style.display = "inline";
   }
   if (mileageValue.value == "" || mileageValue.value == " ") {
     mileageValue.style.border = "1px solid #ff0000";
     mileageValue.classList.add("placeholder");
+    falseImg4.style.display = "inline"
+
   } else {
     mileageValue.style.border = "1px solid #008000";
+    falseImg4.style.display = "none"
+    trueImg4.style.display = "inline";
   }
   if (photoValue.value == "" || photoValue.value == " ") {
     photoValue.style.border = "1px solid #ff0000";
     photoValue.classList.add("placeholder");
+    falseImg5.style.display = "inline"
+
   } else {
     photoValue.style.border = "1px solid #008000";
+    falseImg5.style.display = "none"
+    trueImg5.style.display = "inline";
   }
   if (descriptionValue.value == "" || descriptionValue.value == " ") {
     descriptionValue.style.border = "1px solid #ff0000";
@@ -189,7 +220,11 @@ form.addEventListener("submit", (e) => {
               mileageValue.classList.remove("placeholder");
               photoValue.classList.remove("placeholder");
               descriptionValue.classList.remove("placeholder");
-
+              trueImg1.style.display = "none";
+              trueImg2.style.display = "none";
+              trueImg3.style.display = "none";
+              trueImg4.style.display = "none";
+              trueImg5.style.display = "none";
             }
           }
         }
@@ -202,9 +237,12 @@ brandValue.addEventListener("blur", () => {
   if (brandValue.value == "" || brandValue.value == " ") {
     brandValue.style.border = "1px solid #ff0000";
     brandValue.classList.add("placeholder");
+    falseImg1.style.display = "inline"
   } 
   else {
     brandValue.style.border = "1px solid #008000";
+    falseImg1.style.display = "none"
+    trueImg1.style.display = "inline";
   }
 });
 
@@ -212,8 +250,12 @@ modelValue.addEventListener("blur", () => {
   if (modelValue.value == "" || modelValue.value == " ") {
     modelValue.style.border = "1px solid #ff0000";
     modelValue.classList.add("placeholder");
+    falseImg2.style.display = "inline"
+
   } else {
     modelValue.style.border = "1px solid #008000";
+    falseImg2.style.display = "none"
+    trueImg2.style.display = "inline";
   }
 });
 
@@ -221,8 +263,12 @@ yearValue.addEventListener("blur", () => {
   if (yearValue.value == "" || yearValue.value == " ") {
     yearValue.style.border = "1px solid #ff0000";
     yearValue.classList.add("placeholder");
+    falseImg3.style.display = "inline"
+
   } else {
     yearValue.style.border = "1px solid #008000";
+    falseImg3.style.display = "none"
+    trueImg3.style.display = "inline";
   }
 });
 
@@ -230,8 +276,12 @@ mileageValue.addEventListener("blur", () => {
   if (mileageValue.value == "" || mileageValue.value == " ") {
     mileageValue.style.border = "1px solid #ff0000";
     mileageValue.classList.add("placeholder");
+    falseImg4.style.display = "inline"
+
   } else {
     mileageValue.style.border = "1px solid #008000";
+    falseImg4.style.display = "none"
+    trueImg4.style.display = "inline";
   }
 });
 
@@ -239,8 +289,12 @@ photoValue.addEventListener("blur", () => {
   if (photoValue.value == "" || photoValue.value == " ") {
     photoValue.style.border = "1px solid #ff0000";
     photoValue.classList.add("placeholder");
+    falseImg5.style.display = "inline"
+
   } else {
     photoValue.style.border = "1px solid #008000";
+    falseImg5.style.display = "none"
+    trueImg5.style.display = "inline";
   }
 });
 

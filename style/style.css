@@ -77,7 +77,7 @@ min-width: 270px;
   position: fixed;
   margin-top: 20px;
   margin-left: 20px;
-  max-width: 250px;
+  width: 250px;
   border: 1px solid #4169e1;
   border-radius: 10px;
 }
@@ -116,6 +116,7 @@ min-width: 270px;
   border: 1px solid #4169e1;
   font-family: "San Francisco";
   font-weight: 400;
+ 
 }
 .description:hover{
   box-shadow: 0px 1px 3px 0px #5c5c5c;
@@ -151,6 +152,61 @@ min-width: 270px;
 }
 .wrapperSubmitBtn {
   margin-bottom: -1px;
+}
+.true1{
+  position: absolute;
+  right: 18px;
+display: none;
+
+}
+.false1{
+  position: absolute;
+  right: 18px;
+display: none;
+}
+.true2{
+  position: absolute;
+  right: 18px;
+display: none;
+
+}
+.false2{
+  position: absolute;
+  right: 18px;
+display: none;
+}
+.true3{
+  position: absolute;
+  right: 18px;
+display: none;
+
+}
+.false3{
+  position: absolute;
+  right: 18px;
+display: none;
+}
+.true4{
+  position: absolute;
+  right: 18px;
+display: none;
+
+}
+.false4{
+  position: absolute;
+  right: 18px;
+display: none;
+}
+.true5{
+  position: absolute;
+  right: 18px;
+display: none;
+
+}
+.false5{
+  position: absolute;
+  right: 18px;
+display: none;
 }
 
 
