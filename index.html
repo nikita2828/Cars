@@ -1,152 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style/style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="container">
-     
-    
-      <!-- form -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/style/style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="container">
+			<!-- form -->
+			<div id="wrapperForForm">
+				<div class="formContainer">
+					<div class="formHeader">
+						<span class="title headerItem">Fill the form</span>
+					</div>
 
-      <div id="wrapperForForm">
-        <div class="formContainer">
-          <div class="formHeader">
-            <span class="title headerItem">Fill the form</span>
-          </div>
+					<form id="form" name="server" action="" method="">
+						<div class="wrapperTitleAndInput">
+							<span class="title">Brand</span>
+							<input id="brand" name="brand" class="input validation" type="text" placeholder="Enter brand" />
+							<span class="successIcon"><img width="25px" src="https://img.icons8.com/fluent/48/000000/ok.png" /></span>
+							<span class="errorIcon"
+								><img width="25px" src="https://img.icons8.com/fluent/48/000000/cancel.png"
+							/></span>
+						</div>
 
-          <form id="form" name="server" action="" method="">
-            <div class="wrapperTitleAndInput">
-              <span class="title">Brand</span>
-              <input
-                id="brand"
-                name="brand"
-                class="input validation"
-                type="text"
-                placeholder="Enter brand"
-              />
-              <span class="true1"><img width="25px" src="https://img.icons8.com/fluent/48/000000/ok.png"/></span>
-              <span class="false1"><img width="25px" src="https://img.icons8.com/fluent/48/000000/cancel.png"/></span>
-            </div>
+						<div class="wrapperTitleAndInput">
+							<span class="title">Model</span>
 
-            <div class="wrapperTitleAndInput">
-              <span class="title">Model</span>
+							<input id="model" name="model" class="input validation" type="text" placeholder="Enter model" />
+							<span class="successIcon"><img width="25px" src="https://img.icons8.com/fluent/48/000000/ok.png" /></span>
+							<span class="errorIcon"
+								><img width="25px" src="https://img.icons8.com/fluent/48/000000/cancel.png"
+							/></span>
+						</div>
 
-              <input
-              id="model"
-                name="model"
-                class="input validation"
-                type="text"
-                placeholder="Enter model"
-              />
-              <span class="true2"><img width="25px" src="https://img.icons8.com/fluent/48/000000/ok.png"/></span>
-              <span class="false2"><img width="25px" src="https://img.icons8.com/fluent/48/000000/cancel.png"/></span>
-            </div>
+						<div class="wrapperTitleAndInput">
+							<span class="title">Year</span>
 
-            <div class="wrapperTitleAndInput">
-              <span class="title">Year</span>
+							<input id="year" name="year" class="input validation" type="number" placeholder="Enter year" />
+							<span class="successIcon"><img width="25px" src="https://img.icons8.com/fluent/48/000000/ok.png" /></span>
+							<span class="errorIcon"
+								><img width="25px" src="https://img.icons8.com/fluent/48/000000/cancel.png"
+							/></span>
+						</div>
 
-              <input
-              id="year"
-                name="year"
-                class="input validation"
-                type="number"
-                placeholder="Enter year"
-              /> 
-              <span class="true3"><img width="25px" src="https://img.icons8.com/fluent/48/000000/ok.png"/></span>
-              <span class="false3"><img width="25px" src="https://img.icons8.com/fluent/48/000000/cancel.png"/></span>
-            </div>
+						<div class="wrapperTitleAndInput">
+							<span class="title">Mileage</span>
 
-            <div class="wrapperTitleAndInput">
-              <span class="title">Mileage</span>
+							<input id="mileage" name="mileage" class="input validation" type="number" placeholder="Enter mileage" />
+							<span class="successIcon"><img width="25px" src="https://img.icons8.com/fluent/48/000000/ok.png" /></span>
+							<span class="errorIcon"
+								><img width="25px" src="https://img.icons8.com/fluent/48/000000/cancel.png"
+							/></span>
+						</div>
 
-              <input
-              id="mileage"
-                name="mileage"
-                class="input validation"
-                type="number"
-                placeholder="Enter mileage"
-              />
-              <span class="true4"><img width="25px" src="https://img.icons8.com/fluent/48/000000/ok.png"/></span>
-              <span class="false4"><img width="25px" src="https://img.icons8.com/fluent/48/000000/cancel.png"/></span>
-            </div>
+						<div class="wrapperTitleAndInput">
+							<span class="title">Add a photo</span>
 
-            <div class="wrapperTitleAndInput">
-              <span class="title">Add a photo</span>
+							<input id="photo_link" name="photo_link " class="input validation" type="url" placeholder="add a photo" />
+							<span class="successIcon"><img width="25px" src="https://img.icons8.com/fluent/48/000000/ok.png" /></span>
+							<span class="errorIcon"
+								><img width="25px" src="https://img.icons8.com/fluent/48/000000/cancel.png"
+							/></span>
+						</div>
 
-              <input
-              id="photo_link"
-                name="photo_link "
-                class="input validation"
-                type="url"
-                placeholder="add a photo"
-              />
-              <span class="true5"><img width="25px" src="https://img.icons8.com/fluent/48/000000/ok.png"/></span>
-              <span class="false5"><img width="25px" src="https://img.icons8.com/fluent/48/000000/cancel.png"/></span>
-            </div>
+						<div class="wrapperTitleAndInput">
+							<span class="title spanTextarea">Enter a description of the car</span><br />
 
-            <div class="wrapperTitleAndInput">
-              <span class="title spanTextarea"
-                >Enter a description of the car</span
-              ><br />
+							<textarea
+								class="description validation"
+								name="description"
+								id="description"
+								cols="33"
+								rows="5"
+								maxlength="1000"
+								placeholder="enter a description of the car"
+								form="form"
+							></textarea>
+						</div>
 
-              <textarea
-                class="description validation"
-                name="description"
-                id="description"
-                cols="33"
-                rows="5"
-                maxlength="1000"
-                placeholder="enter a description of the car"
-                form="form"
-              ></textarea
-              >
-           
-            </div>
+						<div class="wrapperTitleAndInput wrapperSubmitBtn">
+							<input name="submit" class="submitBtn" type="submit" placeholder="send" value="Create" /><br />
+						</div>
+					</form>
+				</div>
+			</div>
 
-            <div class="wrapperTitleAndInput wrapperSubmitBtn">
-              <input
-                
-                name="submit"
-                class="submitBtn"
-                type="submit"
-                placeholder="send"
-                value="Create"
-              /><br />
-            </div>
-          </form>
-        </div>
-      </div>
+			<!-- cars -->
 
-      <!-- cars -->
+			<div class="wrapperCars">
+				<!-- search -->
+				<div class="globalSearchWrapper">
+					<div class="searchWrapper">
+						<input type="text" class="search" placeholder="search" />
+						<select class="sort">
+							<option hidden class="sortItem" value="sort by price" disabled selected>Sort by price</option>
+							<option class="sortItem" value="lower first">Lower first</option>
+							<option class="sortItem" value="highest first">Highest first</option>
+						</select>
+					</div>
+				</div>
+				<div class="cars"></div>
+			</div>
+		</div>
 
-      <div class="wrapperCars">
-          <!-- search -->
-      <div class="globalSearchWrapper">
-      <div class="searchWrapper">
-        <input type="text" class="search" placeholder="search" />
-        <select class="sort">
-          <option
-            hidden
-            class="sortItem"
-            value="sort by price"
-            disabled
-            selected
-            >Sort by price</option
-          >
-          <option class="sortItem" value="lower first">Lower first</option>
-          <option class="sortItem" value="highest first">Highest first</option>
-        </select>
-      </div>
-    </div>
-        <div class="cars"> </div>
-      </div>
-
-    </div>
-
-    <script src="script/scritp.js"></script>
-  </body>
+		<script src="script/scritp.js"></script>
+	</body>
 </html>

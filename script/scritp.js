@@ -116,12 +116,30 @@ function postRequest() {
 
 const checkInputs = [brandValue, modelValue, yearValue, mileageValue, photoValue, descriptionValue];
 
+const showErrorIcon = (input) => {
+	const errorIcon = input.parentNode.querySelector('.errorIcon');
+	if (errorIcon) {
+		errorIcon.style.display = 'inline';
+	}
+};
+const showSuccessIcon = (input) => {
+	const errorIcon = input.parentNode.querySelector('.errorIcon');
+	const successIcon = input.parentNode.querySelector('.successIcon');
+	if (errorIcon) {
+		errorIcon.style.display = 'none';
+	}
+	if (successIcon) {
+		successIcon.style.display = 'inline';
+	}
+};
+
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
 	let isError = false;
 	checkInputs.forEach((input) => {
 		if (!input.value) {
 			input.style.border = RED_LINE;
+			showErrorIcon(input);
 			isError = true;
 		}
 	});
@@ -133,12 +151,14 @@ form.addEventListener('submit', (e) => {
 checkInputs.forEach((input) => {
 	input.addEventListener('blur', () => {
 		if (!input.value) {
-			input.style.border = '1px solid #ff0000';
+			showErrorIcon(input);
+			input.style.border = RED_LINE;
 			input.classList.add('placeholder');
 		}
 	});
 	input.addEventListener('input', () => {
 		if (input.value) {
+			showSuccessIcon(input);
 			input.style.border = '1px solid #008000';
 			input.classList.remove('placeholder');
 		}
