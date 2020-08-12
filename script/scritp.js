@@ -11,17 +11,6 @@ const mileageValue = document.querySelector('#mileage');
 const photoValue = document.querySelector('#photo_link');
 const descriptionValue = document.querySelector('#description');
 
-const trueImg1 = document.querySelector('.true1');
-const falseImg1 = document.querySelector('.false1');
-const trueImg2 = document.querySelector('.true2');
-const falseImg2 = document.querySelector('.false2');
-const trueImg3 = document.querySelector('.true3');
-const falseImg3 = document.querySelector('.false3');
-const trueImg4 = document.querySelector('.true4');
-const falseImg4 = document.querySelector('.false4');
-const trueImg5 = document.querySelector('.true5');
-const falseImg5 = document.querySelector('.false5');
-
 const carTegs = `
 <img class="carImg" src="" alt="">
 <div class="carInfo">
