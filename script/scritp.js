@@ -47,7 +47,7 @@ function getRequest() {
 	fetch(BASE_URL)
 		.then((response) => response.json())
 		.then((cars) => {
-			cars.forEach((car) => {
+			cars.reverse().forEach((car) => {
 				const carr = document.createElement('div');
 
 				carr.classList.add('car');
@@ -121,20 +121,32 @@ const showSuccessIcon = (input) => {
 		successIcon.style.display = 'inline';
 	}
 };
+const noneIcon = (input) => {
+  const successIcon = input.parentNode.querySelector('.successIcon');
+	const errorIcon = input.parentNode.querySelector('.errorIcon');
+  if (errorIcon) {
+		errorIcon.style.display = 'none';
+	}
+  if (successIcon) {
+		successIcon.style.display = 'none';
+	}
+}
 
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
 	let isError = false;
 	checkInputs.forEach((input) => {
 		if (!input.value) {
-			input.style.border = RED_LINE;
-			showErrorIcon(input);
+      input.style.border = RED_LINE;
+      showErrorIcon(input);
+			input.classList.add('placeholder');
 			isError = true;
-		}
-	});
-	if (!isError) {
-		postRequest();
-	}
+    }
+
+  });
+  if(!isError){
+    postRequest();
+  }
 });
 
 checkInputs.forEach((input) => {

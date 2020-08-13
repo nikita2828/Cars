@@ -94,13 +94,15 @@ body {
 
 .input {
 	width: 225px;
-	height: 25px;
+	height: 35px;
 	padding-left: 10px;
+	padding-right: 35px;
 	outline: none;
 	border-radius: 5px;
 	border: 1px solid #4169e1;
 	font-family: 'San Francisco';
-	font-weight: 400;
+  font-weight: 400;
+  font-size: 16px;
 }
 .input:focus {
 	box-shadow: 0px 1px 3px 0px #5c5c5c;
@@ -113,7 +115,8 @@ body {
 	outline: none;
 	border: 1px solid #4169e1;
 	font-family: 'San Francisco';
-	font-weight: 400;
+  font-weight: 400;
+  width: 225px;
 }
 .description:hover {
 	box-shadow: 0px 1px 3px 0px #5c5c5c;
@@ -164,18 +167,17 @@ body {
 /* search and sort by price */
 
 .globalSearchWrapper {
-	width: 100%;
-	background-color: white;
-	padding-bottom: 50px;
+  padding-bottom: 60px;
+
 }
 .searchWrapper {
+  padding-top: 20px;
+  background-color: #ffffff;
 	position: fixed;
 	display: flex;
-	margin-top: 10px;
-	margin-right: 20px;
+  margin-left: 20px;
 }
 .search {
-	margin-left: 20px;
 	margin-right: 10px;
 	height: 45px;
 	width: 902px;
