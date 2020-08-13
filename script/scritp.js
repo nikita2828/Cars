@@ -1,15 +1,15 @@
-const BASE_URL = 'http://localhost:3050/cars';
-const RED_LINE = '1px solid #ff0000';
+const BASE_URL = "http://localhost:3050/cars";
+const RED_LINE = "1px solid #ff0000";
 
-const form = document.querySelector('#form');
-const carsList = document.querySelector('.cars');
+const form = document.querySelector("#form");
+const carsList = document.querySelector(".cars");
 
-const brandValue = document.querySelector('#brand');
-const modelValue = document.querySelector('#model');
-const yearValue = document.querySelector('#year');
-const mileageValue = document.querySelector('#mileage');
-const photoValue = document.querySelector('#photo_link');
-const descriptionValue = document.querySelector('#description');
+const brandValue = document.querySelector("#brand");
+const modelValue = document.querySelector("#model");
+const yearValue = document.querySelector("#year");
+const mileageValue = document.querySelector("#mileage");
+const photoValue = document.querySelector("#photo_link");
+const descriptionValue = document.querySelector("#description");
 
 const carTegs = `
 <img class="carImg" src="" alt="">
@@ -30,49 +30,76 @@ const carTegs = `
 `;
 
 const clearCarListAndGetNewData = () => {
-	carsList.innerHTML = '';
-	getRequest();
+  carsList.innerHTML = "";
+  getRequest();
 };
 
 // delete btn
 const deleteOneCar = (id) => {
-	fetch(`${BASE_URL}/${id}`, {
-		method: 'DELETE',
-	}).then(clearCarListAndGetNewData);
+  fetch(`${BASE_URL}/${id}`, {
+    method: "DELETE",
+  }).then(clearCarListAndGetNewData);
+};
+
+//edit btn
+
+const editOneCar = (car) => {
+  const brandValue = document.querySelector("#brand");
+  const modelValue = document.querySelector("#model");
+  const yearValue = document.querySelector("#year");
+  const mileageValue = document.querySelector("#mileage");
+  const photoValue = document.querySelector("#photo_link");
+  const descriptionValue = document.querySelector("#description");
+
+  brandValue.value = car.brand;
+  modelValue.value = car.model;
+  yearValue.value = car.year;
+  mileageValue.value = car.mileage;
+  photoValue.value = car.photo_link;
+  descriptionValue.value = car.description;
+
+  const submitBtn = document.querySelector(".submitBtn");
+  submitBtn.addEventListener("click", () => {
+		fetch(`${BASE_URL}/${car._id}`, {
+			method: "DELETE",
+		  }).then(clearCarListAndGetNewData)
+	  })
 };
 
 //get request
 
 function getRequest() {
-	fetch(BASE_URL)
-		.then((response) => response.json())
-		.then((cars) => {
-			cars.reverse().forEach((car) => {
-				const carr = document.createElement('div');
+  fetch(BASE_URL)
+    .then((response) => response.json())
+    .then((cars) => {
+      cars.reverse().forEach((car) => {
+        const carr = document.createElement("div");
 
-				carr.classList.add('car');
-				carr.innerHTML = carTegs;
+        carr.classList.add("car");
+        carr.innerHTML = carTegs;
 
-				const carImg = carr.querySelector('.carImg');
-				const infoBrand = carr.querySelector('.infoBrand');
-				const infoModel = carr.querySelector('.infoModel');
-				const infoYear = carr.querySelector('.infoYear');
-				const infoKm = carr.querySelector('.infoKm');
-				const infoDescription = carr.querySelector('.infoDescription');
+        const carImg = carr.querySelector(".carImg");
+        const infoBrand = carr.querySelector(".infoBrand");
+        const infoModel = carr.querySelector(".infoModel");
+        const infoYear = carr.querySelector(".infoYear");
+        const infoKm = carr.querySelector(".infoKm");
+        const infoDescription = carr.querySelector(".infoDescription");
 
-				const deleteBtn = carr.querySelector('.deleteBtn');
+        const deleteBtn = carr.querySelector(".deleteBtn");
+        const editBtn = carr.querySelector(".editBtn");
 
-				carImg.setAttribute('src', car.photo_link);
-				infoBrand.innerText = `Brand: ${car.brand}`;
-				infoModel.innerText = `Model: ${car.model}`;
-				infoYear.innerText = `Year: ${car.year}`;
-				infoKm.innerText = `Mileage : ${car.mileage}m`;
-				infoDescription.innerText = `Description: ${car.description}`;
+        carImg.setAttribute("src", car.photo_link);
+        infoBrand.innerText = `Brand: ${car.brand}`;
+        infoModel.innerText = `Model: ${car.model}`;
+        infoYear.innerText = `Year: ${car.year}`;
+        infoKm.innerText = `Mileage : ${car.mileage}m`;
+        infoDescription.innerText = `Description: ${car.description}`;
 
-				carsList.appendChild(carr);
-				deleteBtn.addEventListener('click', () => deleteOneCar(car._id));
-			});
-		});
+        carsList.appendChild(carr);
+        deleteBtn.addEventListener("click", () => deleteOneCar(car._id));
+        editBtn.addEventListener("click", () => editOneCar(car));
+      });
+    });
 }
 getRequest();
 
@@ -80,91 +107,97 @@ getRequest();
 
 // post request
 function postRequest() {
-	const carObj = {
-		brand: brandValue.value,
-		model: modelValue.value,
-		year: +yearValue.value,
-		mileage: +mileageValue.value,
-		photo_link: photoValue.value,
-		description: descriptionValue.value,
-	};
+  const carObj = {
+    brand: brandValue.value,
+    model: modelValue.value,
+    year: +yearValue.value,
+    mileage: +mileageValue.value,
+    photo_link: photoValue.value,
+    description: descriptionValue.value,
+  };
 
-	fetch(BASE_URL, {
-		method: 'POST',
-		body: JSON.stringify(carObj),
-		headers: {
-			'Content-Type': 'application/json',
-		},
-	})
-		.then(clearCarListAndGetNewData)
-		.catch((err) => console.error(err));
-	form.reset();
+  fetch(BASE_URL, {
+    method: "POST",
+    body: JSON.stringify(carObj),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then(clearCarListAndGetNewData)
+    .catch((err) => console.error(err));
+  form.reset();
 }
 
 //validation
 
-const checkInputs = [brandValue, modelValue, yearValue, mileageValue, photoValue, descriptionValue];
+const checkInputs = [
+  brandValue,
+  modelValue,
+  yearValue,
+  mileageValue,
+  photoValue,
+  descriptionValue,
+];
 
 const showErrorIcon = (input) => {
-	const errorIcon = input.parentNode.querySelector('.errorIcon');
-	if (errorIcon) {
-		errorIcon.style.display = 'inline';
-	}
+  const errorIcon = input.parentNode.querySelector(".errorIcon");
+  if (errorIcon) {
+    errorIcon.style.display = "inline";
+  }
 };
 const showSuccessIcon = (input) => {
-	const errorIcon = input.parentNode.querySelector('.errorIcon');
-	const successIcon = input.parentNode.querySelector('.successIcon');
-	if (errorIcon) {
-		errorIcon.style.display = 'none';
-	}
-	if (successIcon) {
-		successIcon.style.display = 'inline';
-	}
+  const errorIcon = input.parentNode.querySelector(".errorIcon");
+  const successIcon = input.parentNode.querySelector(".successIcon");
+  if (errorIcon) {
+    errorIcon.style.display = "none";
+  }
+  if (successIcon) {
+    successIcon.style.display = "inline";
+  }
 };
 const noneIcon = (input) => {
-  const successIcon = input.parentNode.querySelector('.successIcon');
-	const errorIcon = input.parentNode.querySelector('.errorIcon');
+  const successIcon = input.parentNode.querySelector(".successIcon");
+  const errorIcon = input.parentNode.querySelector(".errorIcon");
   if (errorIcon) {
-		errorIcon.style.display = 'none';
-	}
+    errorIcon.style.display = "none";
+  }
   if (successIcon) {
-		successIcon.style.display = 'none';
-	}
-}
+    successIcon.style.display = "none";
+  }
+};
 
-form.addEventListener('submit', (e) => {
-	e.preventDefault();
-	let isError = false;
-	checkInputs.forEach((input) => {
-		if (!input.value) {
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let isError = false;
+  checkInputs.forEach((input) => {
+    if (!input.value) {
       input.style.border = RED_LINE;
       showErrorIcon(input);
-			input.classList.add('placeholder');
-			isError = true;
-    }else{
+      input.classList.add("placeholder");
+      isError = true;
+    } else {
       noneIcon(input);
-      input.style.border = "1px solid #4169e1"
+      input.style.border = "1px solid #4169e1";
     }
-
   });
-  if(!isError){
+  if (!isError) {
     postRequest();
   }
 });
 
 checkInputs.forEach((input) => {
-	input.addEventListener('blur', () => {
-		if (!input.value) {
-			showErrorIcon(input);
-			input.style.border = RED_LINE;
-			input.classList.add('placeholder');
-		}
-	});
-	input.addEventListener('input', () => {
-		if (input.value) {
-			showSuccessIcon(input);
-			input.style.border = '1px solid #008000';
-			input.classList.remove('placeholder');
-		}
-	});
+  input.addEventListener("blur", () => {
+    if (!input.value) {
+      showErrorIcon(input);
+      input.style.border = RED_LINE;
+      input.classList.add("placeholder");
+    }
+  });
+  input.addEventListener("input", () => {
+    if (input.value) {
+      showSuccessIcon(input);
+      input.style.border = "1px solid #008000";
+      input.classList.remove("placeholder");
+    }
+  });
 });
