@@ -10,6 +10,7 @@ const yearValue = document.querySelector("#year");
 const mileageValue = document.querySelector("#mileage");
 const photoValue = document.querySelector("#photo_link");
 const descriptionValue = document.querySelector("#description");
+const submitBtn = document.querySelector(".submitBtn");
 
 const carTegs = `
 <img class="carImg" src="" alt="">
@@ -44,12 +45,6 @@ const deleteOneCar = (id) => {
 //edit btn
 
 const editOneCar = (car) => {
-  const brandValue = document.querySelector("#brand");
-  const modelValue = document.querySelector("#model");
-  const yearValue = document.querySelector("#year");
-  const mileageValue = document.querySelector("#mileage");
-  const photoValue = document.querySelector("#photo_link");
-  const descriptionValue = document.querySelector("#description");
 
   brandValue.value = car.brand;
   modelValue.value = car.model;
@@ -58,12 +53,11 @@ const editOneCar = (car) => {
   photoValue.value = car.photo_link;
   descriptionValue.value = car.description;
 
-  const submitBtn = document.querySelector(".submitBtn");
   submitBtn.addEventListener("click", () => {
-		fetch(`${BASE_URL}/${car._id}`, {
-			method: "DELETE",
-		  }).then(clearCarListAndGetNewData)
-	  })
+    fetch(`${BASE_URL}/${car._id}`, {
+      method: "DELETE",
+    });
+  });
 };
 
 //get request
