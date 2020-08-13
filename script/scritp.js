@@ -141,6 +141,9 @@ form.addEventListener('submit', (e) => {
       showErrorIcon(input);
 			input.classList.add('placeholder');
 			isError = true;
+    }else{
+      noneIcon(input);
+      input.style.border = "1px solid #4169e1"
     }
 
   });
