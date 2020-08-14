@@ -35,6 +35,25 @@ const clearCarListAndGetNewData = () => {
   getRequest();
 };
 
+//search
+
+const searchDes = (info) => {
+  const search1 = document.querySelector(".search");
+
+  let value = search1.value.trim();
+  if (value != "") {
+    info.forEach((car) => {
+      if (car.innerText.search(value) == -1) {
+        car.classList.add("carNone");
+      } 
+    }) 
+}else {
+  info.forEach((car) => {
+     car.classList.remove("carNone");
+   })
+}
+}
+
 // delete btn
 const deleteOneCar = (id) => {
   fetch(`${BASE_URL}/${id}`, {
@@ -45,7 +64,6 @@ const deleteOneCar = (id) => {
 //edit btn
 
 const editOneCar = (car) => {
-
   brandValue.value = car.brand;
   modelValue.value = car.model;
   yearValue.value = car.year;
@@ -81,6 +99,7 @@ function getRequest() {
 
         const deleteBtn = carr.querySelector(".deleteBtn");
         const editBtn = carr.querySelector(".editBtn");
+        const search = document.querySelector(".search");
 
         carImg.setAttribute("src", car.photo_link);
         infoBrand.innerText = `Brand: ${car.brand}`;
@@ -92,6 +111,12 @@ function getRequest() {
         carsList.appendChild(carr);
         deleteBtn.addEventListener("click", () => deleteOneCar(car._id));
         editBtn.addEventListener("click", () => editOneCar(car));
+
+        console.log(carr)
+
+        search.addEventListener("input", () =>
+          searchDes(carr)
+        );
       });
     });
 }

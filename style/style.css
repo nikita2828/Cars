@@ -302,3 +302,7 @@ body {
 .placeholder::placeholder {
 	color: #ff0000;
 }
+
+.carNone{
+	display: none;
+}
