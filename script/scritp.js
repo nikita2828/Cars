@@ -36,23 +36,44 @@ const clearCarListAndGetNewData = () => {
 };
 
 //search
+  const search = document.querySelector(".search");
+  search.addEventListener("input", () => {
+    fetch(BASE_URL)
+    .then((response) => response.json())
+    .then((cars) => {
+      cars.reverse().forEach((car) => {
+        const carr = document.createElement("div");
+        carr.classList.add("car");
+        carr.innerHTML = carTegs;
 
-const searchDes = (info) => {
-  const search1 = document.querySelector(".search");
+        const carImg = carr.querySelector(".carImg");
+        const infoBrand = carr.querySelector(".infoBrand");
+        const infoModel = carr.querySelector(".infoModel");
+        const infoYear = carr.querySelector(".infoYear");
+        const infoKm = carr.querySelector(".infoKm");
+        const infoDescription = carr.querySelector(".infoDescription");
 
-  let value = search1.value.trim();
-  if (value != "") {
-    info.forEach((car) => {
-      if (car.innerText.search(value) == -1) {
-        car.classList.add("carNone");
-      } 
-    }) 
-}else {
-  info.forEach((car) => {
-     car.classList.remove("carNone");
-   })
-}
-}
+        carImg.setAttribute("src", car.photo_link);
+        infoBrand.innerText = `Brand: ${car.brand}`;
+        infoModel.innerText = `Model: ${car.model}`;
+        infoYear.innerText = `Year: ${car.year}`;
+        infoKm.innerText = `Mileage : ${car.mileage}m`;
+        infoDescription.innerText = `Description: ${car.description}`;
+
+        carsList.appendChild(carr);
+        let value = search.value.trim();
+        if(value != ""){
+          carsList.forEach((car) => {
+            if (car.innerText.search(value) == -1){
+              car.classList.add("carNone")
+            } else{
+              car.classList.remove("carNone")
+            }
+          })
+        }
+    })
+  })
+})
 
 // delete btn
 const deleteOneCar = (id) => {
@@ -99,7 +120,6 @@ function getRequest() {
 
         const deleteBtn = carr.querySelector(".deleteBtn");
         const editBtn = carr.querySelector(".editBtn");
-        const search = document.querySelector(".search");
 
         carImg.setAttribute("src", car.photo_link);
         infoBrand.innerText = `Brand: ${car.brand}`;
@@ -111,12 +131,6 @@ function getRequest() {
         carsList.appendChild(carr);
         deleteBtn.addEventListener("click", () => deleteOneCar(car._id));
         editBtn.addEventListener("click", () => editOneCar(car));
-
-        console.log(carr)
-
-        search.addEventListener("input", () =>
-          searchDes(carr)
-        );
       });
     });
 }
