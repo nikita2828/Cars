@@ -59,7 +59,7 @@ search.addEventListener('input', (event) => {
 	});
 	carsList.innerHTML = '';
 	if (!filteredResult.length) {
-		carsList.innerHTML = '<h1>Извините но овпадений нет</h1>';
+		carsList.innerHTML = ' <h1>Извините но совпадений нет</h1>';
 	} else {
 		renderCars(filteredResult);
 	}
